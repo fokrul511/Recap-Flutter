@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 
 class DitailsScreen extends StatelessWidget {
-  final String gridImage;
+  final String image;
+  final String id;
   final String title;
-  final String content;
 
   const DitailsScreen(
       {super.key,
-      required this.gridImage,
-      required this.title,
-      required this.content});
+      required this.image,
+      required this.id,
+      required this.title});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title.toString())),
+      appBar: AppBar(title: Text(title.toString(),)),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Git Best Repository',
+             Text(
+              'Api Id :$id'.toString(),
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
             ),
             const SizedBox(
@@ -30,7 +30,7 @@ class DitailsScreen extends StatelessWidget {
             ),
             Card(
               child: Image(
-                image: NetworkImage(gridImage.toString()),
+                image: NetworkImage(image.toString()),
                 width: double.infinity,
               ),
             ),
@@ -38,13 +38,13 @@ class DitailsScreen extends StatelessWidget {
               height: 10,
             ),
             const Text(
-              'About this Repository:',
+              'About this api:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
             const SizedBox(
               height: 5,
             ),
-            Text(content),
+            Text(title.toString()),
           ],
         ),
       ),

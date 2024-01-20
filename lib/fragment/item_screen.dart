@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:recape_flutter/fragment/ditails_fargment.dart';
-
 import '../data/gridVew_data.dart';
 
 class ItemScreen extends StatelessWidget {
@@ -19,7 +17,6 @@ class ItemScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => DitailsScreen(gridImage: gridImage[index]['Image'], title: gridImage[index]['title'], content: gridImage[index]['Content']),));
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),

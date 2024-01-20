@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-
-
-import 'api.dart';
-
-// import 'home.dart';
+import 'package:recape_flutter/pactics_api/day_2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: StudentData(),
+      home: DayTwo(),
     );
   }
 }
