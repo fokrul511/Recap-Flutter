@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recape_flutter/pactics_api/day_2.dart';
+import 'package:recape_flutter/todo/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: DayTwo(),
+      debugShowCheckedModeBanner: true,
+      home: SplashScreen(),
     );
   }
 }
