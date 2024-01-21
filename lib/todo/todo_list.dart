@@ -34,21 +34,7 @@ class _TodoListState extends State<TodoList> {
                       SizedBox(
                         height: 15,
                       ),
-                      TextFormField(
-                        controller: _titleC,
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                          label: Text('Enter Your Note Title'),
-                          border: OutlineInputBorder(),
-                        ),
-                        validator: (String? value) {
-                          String v = value ?? "";
-                          if (v.isEmpty) {
-                            return 'Plesse Enter Your Note Title Here';
-                          }
-                          return null;
-                        },
-                      ),
+                      NewWidget(titleC: _titleC),
                       SizedBox(
                         height: 15,
                       ),
@@ -158,5 +144,33 @@ class _TodoListState extends State<TodoList> {
   void clear() {
     _titleC.clear();
     _ditailsC.clear();
+  }
+}
+
+class NewWidget extends StatelessWidget {
+  const NewWidget({
+    super.key,
+    required TextEditingController titleC,
+  }) : _titleC = titleC;
+
+  final TextEditingController _titleC;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      controller: _titleC,
+      keyboardType: TextInputType.text,
+      decoration: InputDecoration(
+        label: Text('Enter Your Note Title'),
+        border: OutlineInputBorder(),
+      ),
+      validator: (String? value) {
+        String v = value ?? "";
+        if (v.isEmpty) {
+          return 'Plesse Enter Your Note Title Here';
+        }
+        return null;
+      },
+    );
   }
 }
